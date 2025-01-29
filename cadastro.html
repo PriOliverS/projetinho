@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        header, footer {
+            width: 100%;
+            background: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            position: fixed;
+        }
+        header {
+            top: 0;
+        }
+        footer {
+            bottom: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 80px;
+            margin-bottom: 60px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        .container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>Cadastro de Usuário</header>
+    <div class="container" id="formContainer">
+        <div class="logo">
+            <img src="logo-branca-ias.png" alt="Logo">
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="cnpj-cpf">CNPJ/CPF</label>
+                <input type="text" id="cnpj-cpf" name="cnpj-cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="razao">Razão Social</label>
+                <input type="text" id="razao" name="razao" required>
+            </div>
+            <div class="form-group">
+                <label for="fantasia">Nome Fantasia</label>
+                <input type="text" id="fantasia" name="fantasia" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="info">Outras Informações</label>
+                <input type="text" id="info" name="info">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmar-senha">Confirme a Senha</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer>© 2024 - Todos os direitos reservados</footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("formContainer").classList.add("show");
+        });
+    </script>
+</body>
+</html>
